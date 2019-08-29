@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>redis如何处理多客户端连接 | jaan-个人博客</title>
+  <title>Archives: 2019/7 | jaan-个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="redis是单线程的程序!  nginx和node也是的redis是个单线程程序那么是怎么处理多客户端的读和写的呢？ 非阻塞IO当我们调用套接字的读写方法的时候，默认他们是阻塞的。比如输入的read方法，传入参数n代表最多读取n个字节后返回,如果一个字节都没有的话就会卡在哪里，知道新的数据到来或者连接关闭read方法才会返回。输出的write一般不会阻塞，除非内核为套接字分配的写缓冲区已经满了，w">
-<meta name="keywords" content="redis,IO模型">
-<meta property="og:type" content="article">
-<meta property="og:title" content="redis如何处理多客户端连接">
-<meta property="og:url" content="http://yoursite.com/2019/03/10/redis如何处理多客户端连接/index.html">
+  <meta name="description" content="会写拍照的程序员不是好生物汪">
+<meta name="keywords" content="java,算法,JVM,后端,高并发,Linux">
+<meta property="og:type" content="website">
+<meta property="og:title" content="jaan-个人博客">
+<meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
 <meta property="og:site_name" content="jaan-个人博客">
-<meta property="og:description" content="redis是单线程的程序!  nginx和node也是的redis是个单线程程序那么是怎么处理多客户端的读和写的呢？ 非阻塞IO当我们调用套接字的读写方法的时候，默认他们是阻塞的。比如输入的read方法，传入参数n代表最多读取n个字节后返回,如果一个字节都没有的话就会卡在哪里，知道新的数据到来或者连接关闭read方法才会返回。输出的write一般不会阻塞，除非内核为套接字分配的写缓冲区已经满了，w">
+<meta property="og:description" content="会写拍照的程序员不是好生物汪">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-29T15:08:43.188Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redis如何处理多客户端连接">
-<meta name="twitter:description" content="redis是单线程的程序!  nginx和node也是的redis是个单线程程序那么是怎么处理多客户端的读和写的呢？ 非阻塞IO当我们调用套接字的读写方法的时候，默认他们是阻塞的。比如输入的read方法，传入参数n代表最多读取n个字节后返回,如果一个字节都没有的话就会卡在哪里，知道新的数据到来或者连接关闭read方法才会返回。输出的write一般不会阻塞，除非内核为套接字分配的写缓冲区已经满了，w">
+<meta name="twitter:title" content="jaan-个人博客">
+<meta name="twitter:description" content="会写拍照的程序员不是好生物汪">
   
     <link rel="alternative" href="/atom.xml" title="jaan-个人博客" type="application/atom+xml">
   
@@ -155,191 +154,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-redis如何处理多客户端连接" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      redis如何处理多客户端连接
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/07/19/关于JVM虚拟机在编译器进行的优化/" class="archive-article-date">
+  	<time datetime="2019-07-19T10:29:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/07/19/关于JVM虚拟机在编译器进行的优化/">关于JVM虚拟机在编译器进行的优化</a>
     </h1>
   
 
-        
-        <a href="/2019/03/10/redis如何处理多客户端连接/" class="archive-article-date">
-  	<time datetime="2019-03-10T11:59:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>redis是单线程的程序!  nginx和node也是的<br>redis是个单线程程序那么是怎么处理多客户端的读和写的呢？</p>
-<h5 id="非阻塞IO"><a href="#非阻塞IO" class="headerlink" title="非阻塞IO"></a>非阻塞IO</h5><p>当我们调用套接字的读写方法的时候，默认他们是阻塞的。比如输入的read方法，传入参数n代表最多读取n个字节后返回,如果一个字节都没有的话就会卡在哪里，知道新的数据到来或者连接关闭read方法才会返回。输出的write一般不会阻塞，除非内核为套接字分配的写缓冲区已经满了，write就会阻塞，直到缓存区有空间空闲出来。</p>
-<a id="more"></a>
-<pre><code>public abstract int read()throws IOException
-从输入流读取下一个数据字节。返回 0 到 255 范围内的 int 字节值。如果因已到达流末尾而没有可用      的字节，则返回值 -1。在输入数据可用、检测到流的末尾或者抛出异常前，此方法一直阻塞</code></pre><p>非阻塞IO在套接字对象上提供了一个选项Non_Blocking,当这个选项打开时，读写方法不会阻塞。能读多少读多少，能写多少写多少，有了非阻塞IO就意味着线程在读写IO的时候就不用阻塞了，读写瞬间完成，然后线程就可以继续干别的事了。</p>
-<h5 id="事件轮询（多路复用）"><a href="#事件轮询（多路复用）" class="headerlink" title="事件轮询（多路复用）"></a>事件轮询（多路复用）</h5><p>非阻塞IO有一个问题就，就是假如A(redis)-B(客户端)之间进行通信，A要读取B的内容，B暂时还没有内容，如果是阻塞IO的话，A会在这里一直等着，直到B有了数据才能返回，现在非阻塞IO A直接返回，那么问题就来了。当A返回了之后怎么知道B什么时候会有数据然后来读取呢？或者是B向A写，A的缓冲区满了，B返回，B什么时候再来写或者B有了缓冲空间之后是怎么通知到B的呢？<br>事件轮询就是来解决这个问题的。最简单的事件轮询API是<strong>select函数</strong>，他是操作系统提供给用户程序的API，输入给系统调用的是读写描述符列表read_fds &amp; write_fds，操作系统返回的是与之对应的可读写事件。同时还有提供了一个timeout参数，如果没有任何事件到来就最多等待timeout后返回，如果这中间有事件来了就立刻返回。操作系统返回之后，线程就可以挨个处理相应的事件了，处理完了继续来轮询。<strong>（在等操作系统返回的这段事件线程能不能进行读或者写？）</strong>于是线程就进入死循环，把这个死循环成为事件循环每一个循环为一个周期。<br>每个客户端套接字socket都有对那个的读写文件描述符</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">read_events,write_events = select(read_fds,write_fds,timeout)</span><br><span class="line"><span class="keyword">for</span> event in read_events:</span><br><span class="line">	handle_read(event.fd)</span><br><span class="line"><span class="keyword">for</span> event in write_events:</span><br><span class="line">	handle_write(event.fd)</span><br><span class="line">handle_others() # 处理其他事情，如定时任务等</span><br></pre></td></tr></table></figure>
-
-<p>我们将处理多个通道描述符事件的API成为多路复用API<br>现代操作系统的多路复用API已经不再使用select了，而改用epoll（linux）和kqueue（FreeBSD 和 macosx），因为select在描述符特别多的时候性能会变得特别差。<br>服务器套接字serversocket对象的读操作是指调用accept接受客户端新连接。何时有新的连接到来，也是通过select系统调用的读时间来得到通知的。<br>事件轮询技术就是Java里面的NIO技术，java的NIO并不是java的特有技术，其他计算机语言都有这个技术，只不过换了一个词汇不叫NIO而已</p>
-<h5 id="指令队列指令队列"><a href="#指令队列指令队列" class="headerlink" title="指令队列指令队列"></a>指令队列指令队列</h5><p>redis会将每个客户端套接字都关联一个指令队列。客户端的指令通过队列来排队进行顺序处理，先到先服务</p>
-<h5 id="相应队列"><a href="#相应队列" class="headerlink" title="相应队列"></a>相应队列</h5><p>redis同样的也会为每一个客户端关联一个相应队列。redis服务器通过相应队列来讲指令的返回结果回复给客户端。如果队列为空，意味着连接暂时处于空闲状态，不需要去获取写事件，也就是可以将当前的哭护短描述符从write_fds里面移出来。等到队列有数据了，再将描述符放进去，避免select系统调用立即返回写事件，结果没发现什么数据可以写，出现这种情况的线程会是cpu消耗飙升。</p>
-<h5 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h5><p>服务器除了要相应IO时间外，还要处理其他事情比如定时和持久化。如果线程阻塞在select系统调用上，定时任务将无准时调度。<br>redis的定时任务会记录在一个被称为“最小堆”的数据结构中。在这个堆中最快要执行的任务排在最上面，在每个循环周期里面redis都会对最小堆里面已经过期的任务进行处理，然后将最快要执行的任务还需要多少时间记录下来，把这个时间作为select的timeout，这就能保证在这个时间里面一定能回来执行。<br>nginx和node事件处理原理和redis也是类似的。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IO模型</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/10/redis如何处理多客户端连接/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/03/11/redis持久化/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          redis持久化
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/12/22/java基础复习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java基础复习</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -362,8 +230,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
