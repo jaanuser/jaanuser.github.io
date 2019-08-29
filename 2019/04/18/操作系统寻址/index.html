@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>jaan-个人博客</title>
+  <title>操作系统寻址 | jaan-个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="会写拍照的程序员不是好生物汪">
-<meta name="keywords" content="java,算法,JVM,后端,高并发,Linux">
-<meta property="og:type" content="website">
-<meta property="og:title" content="jaan-个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="操作系统是怎样来寻址的，也就是说给了一个地址，我们怎样在这个层次结构中找到自己所需要的数据，首先我们来看一下寻址空间，寻址空间就是我们每一个进程，里面的指针可以取到的地址的范围，寻址空间和机器上到底装了多少内存是没有关系的，和此时有多少个进程也没有关系，每个进程就有自己独立的寻址空间，那这个寻址空间有多大呢？32位的操作系统就是2的32次方就是4G，现在许多电脑的内存都已经不止4G了，那在这样的电">
+<meta name="keywords" content="操作系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统寻址">
+<meta property="og:url" content="http://yoursite.com/2019/04/18/操作系统寻址/index.html">
 <meta property="og:site_name" content="jaan-个人博客">
-<meta property="og:description" content="会写拍照的程序员不是好生物汪">
+<meta property="og:description" content="操作系统是怎样来寻址的，也就是说给了一个地址，我们怎样在这个层次结构中找到自己所需要的数据，首先我们来看一下寻址空间，寻址空间就是我们每一个进程，里面的指针可以取到的地址的范围，寻址空间和机器上到底装了多少内存是没有关系的，和此时有多少个进程也没有关系，每个进程就有自己独立的寻址空间，那这个寻址空间有多大呢？32位的操作系统就是2的32次方就是4G，现在许多电脑的内存都已经不止4G了，那在这样的电">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/assets/os_1.png">
+<meta property="og:image" content="http://yoursite.com/assets/os_2.png">
+<meta property="og:updated_time" content="2019-08-29T15:24:20.717Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jaan-个人博客">
-<meta name="twitter:description" content="会写拍照的程序员不是好生物汪">
+<meta name="twitter:title" content="操作系统寻址">
+<meta name="twitter:description" content="操作系统是怎样来寻址的，也就是说给了一个地址，我们怎样在这个层次结构中找到自己所需要的数据，首先我们来看一下寻址空间，寻址空间就是我们每一个进程，里面的指针可以取到的地址的范围，寻址空间和机器上到底装了多少内存是没有关系的，和此时有多少个进程也没有关系，每个进程就有自己独立的寻址空间，那这个寻址空间有多大呢？32位的操作系统就是2的32次方就是4G，现在许多电脑的内存都已经不止4G了，那在这样的电">
+<meta name="twitter:image" content="http://yoursite.com/assets/os_1.png">
   
     <link rel="alternative" href="/atom.xml" title="jaan-个人博客" type="application/atom+xml">
   
@@ -154,96 +158,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-mysql索引机制学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-操作系统寻址" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/21/mysql索引机制学习笔记/">mysql索引机制学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/21/mysql索引机制学习笔记/" class="archive-article-date">
-  	<time datetime="2019-04-21T14:50:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>B-Tree中一次检索最多需要h-1次I/O（根节点常驻内存）<br>MyISAM引擎使用B+Tree作为索引结构，叶节点的data域存放的是数据记录的地址<br><img src="/assets/mysql-B-tree.png" alt><br>B-Tree<br><img src="/assets/mysql_B+Tree.png" alt><br>B+Tree</p>
-        
-          <a class="article-more-a" href="/2019/04/21/mysql索引机制学习笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/21/mysql索引机制学习笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-操作系统寻址" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/18/操作系统寻址/">操作系统寻址</a>
+    <h1 class="article-title" itemprop="name">
+      操作系统寻址
     </h1>
   
 
@@ -257,11 +179,37 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/assets/os_1.png" alt><br>操作系统是怎样来寻址的，也就是说给了一个地址，我们怎样在这个层次结构中找到自己所需要的数据，首先我们来看一下寻址空间，寻址空间就是我们每一个进程，里面的指针可以取到的地址的范围，寻址空间和机器上到底装了多少内存是没有关系的，和此时有多少个进程也没有关系，每个进程就有自己独立的寻址空间，那这个寻址空间有多大呢？32位的操作系统就是2的32次方就是4G，现在许多电脑的内存都已经不止4G了，那在这样的电脑上运行32位的系统的话，那即使我们买了8G的内存，每个进程也只能用到其中的4G，因为他的指针的大小只有32位，只能访问到一个4g的内存的大小，所以现在大多数的系统都使用了64位，2的64次方大约10的19次方bytes大，这个已经是一个天文数字了。</p>
-        
-          <a class="article-more-a" href="/2019/04/18/操作系统寻址/#more">more >></a>
-        
+<a id="more"></a>
+<p>除了32和64位的系统之外 还有一个东西，64位的JVM，就是java的虚拟机，64位的java虚拟机意味着什么呢，在java中并没有指针的概念，不会具体的操作一个地址，但是在虚拟机内部本身有自己的寻址的逻辑，我们使用了64位的jvm就可以寻址寻到64位的一个地址空间，可以使用更大的内存，那怎么把32位的java程序迁移到64位的jvm上呢，在绝大数情况下，我们不需要做太多的考虑，也不需要修改任何的代码，只要重新编译一下就可以。</p>
+<hr>
+<p>下面看一下，具体的寻址的例子</p>
+<hr>
+<p><img src="/assets/os_2.png" alt></p>
+<p>p存放的地址，*p就是说把这个地址指向的int类型数据读出来，赋给局部变量n，这句话编译器编译成汇编之后，很有可能就是后面的MOV EAX,[EBX],也就是说把EBX寄存器里这个地址所指向的数据给都出来放在EAX寄存器里面，编译器会记住n对应EAX，p对应EBX这件事情。<br>我们看看具体怎么做的：<br>有个指针p，那我们认为就很简单啦，他所指向的内存不就是我们需要的数据吗，把他读出来不就是了，但是他所指向的不是物理内存，而是逻辑内存，只在逻辑上存在，这块内存就是我们之前所说的寻址空间，是进程独立的，每个进程都有自己的逻辑内存他的大小跟物理内存也没关系，就是跟操作系统的位数有关系，操作要做的是我们给定了一个逻辑内存的地址怎样来找到实际的数据在哪里呢，把逻辑内存的地址和实际物理内存的地址建立一个对应的关系就能找到了，但是为什么这是个虚线呢，因为逻辑内存这么大，对应到物理内存是不一定能对应出来的，有可能在物理内存里面，直接取出来就可以了，有可能不在物理内存里面，那不在物理内存里面的话在哪里呢？<br>在虚拟内存里面，操作系统都会在硬盘上开辟一个空间作为虚拟内存，硬盘是比较大的，只要放得下就可以把内存里的东西放到硬盘上去，接下来要做的就是必须把这个数据给读出来不能说，寻址寻到一半他不在物理内存里就不给他寻了，那我就要把虚拟内存的这个数据放到物理内存，但是也不能只把int 4字节的放进去，这样系统的开销太大，所以在在虚拟内存中有一个分页的概念，不是说只把p指向的部分放过去，而是把p所在的那个分页放过去，这个分页可能有几k也可能有多少M，这个根据操作系统的配置是不同的，我们会把一大片内存从虚拟内存里拿出来放进我们的物理内存，其中就包括了p所指向的数据，放进物理内存就有一个问题，物理内存放的下吗？放不下的话就要把物理内存里很久没有用的一块东西，这个由算法去找，找到之后把不经常用的那块交换出来，交换进我们的虚拟内存，把需要的数据换入物理内存，接下来的问题就好做了，在物理内存里面已经确保了p所在的这块数据，要做的就是把他取出来放到寄存器EAX里面去就好了</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -281,16 +229,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/18/操作系统寻址/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/18/操作系统寻址/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/04/21/mysql索引机制学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          mysql索引机制学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/11/redis持久化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">redis持久化</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -310,331 +326,14 @@
 
 
 
-
   
-    <article id="post-redis持久化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/11/redis持久化/">redis持久化</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/11/redis持久化/" class="archive-article-date">
-  	<time datetime="2019-03-11T03:03:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们都知道redis的数据都是在内存里面的，如果服务器宕机或者重启，就会导致数据丢失。所以必须要有一种给机制来保证redis的数据不会因为故障而丢失，这种机制就是redis的持久化机制。<br>redis的持久化机制有两种：快照模式和AOF日志。redis 4.0 开始可以使用两种模式的结合<br>快照是一次全量备份，存储的是内存数据的二进制序列化形式。AOF日志是连续的增量备份，记录的是内存数据修改的指令记录文本。数据库重启时进行需要加载AOF日志进行指令重放这个时间就非常慢，所以要定期给AOF瘦身。</p>
-        
-          <a class="article-more-a" href="/2019/03/11/redis持久化/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/11/redis持久化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-redis如何处理多客户端连接" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/10/redis如何处理多客户端连接/">redis如何处理多客户端连接</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/10/redis如何处理多客户端连接/" class="archive-article-date">
-  	<time datetime="2019-03-10T11:59:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>redis是单线程的程序!  nginx和node也是的<br>redis是个单线程程序那么是怎么处理多客户端的读和写的呢？</p>
-<h5 id="非阻塞IO"><a href="#非阻塞IO" class="headerlink" title="非阻塞IO"></a>非阻塞IO</h5><p>当我们调用套接字的读写方法的时候，默认他们是阻塞的。比如输入的read方法，传入参数n代表最多读取n个字节后返回,如果一个字节都没有的话就会卡在哪里，知道新的数据到来或者连接关闭read方法才会返回。输出的write一般不会阻塞，除非内核为套接字分配的写缓冲区已经满了，write就会阻塞，直到缓存区有空间空闲出来。</p>
-        
-          <a class="article-more-a" href="/2019/03/10/redis如何处理多客户端连接/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IO模型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/10/redis如何处理多客户端连接/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java基础复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/22/java基础复习/">java基础复习</a>
-    </h1>
   
 
-        
-        <a href="/2018/12/22/java基础复习/" class="archive-article-date">
-  	<time datetime="2018-12-22T06:44:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h4><ul>
-<li>byte/8</li>
-<li>char/16</li>
-<li>short/16</li>
-<li>int/32</li>
-<li>float/32</li>
-<li>long/64</li>
-<li>double/64</li>
-<li>boolean/~</li>
-</ul>
-<p>JVM 会在编译时期将 boolean 类型的数据转换为 int，使用 1 来表示 true，0 表示 false。JVM 支持 boolean 数组，但是是通过读写 byte 数组来实现的。</p>
-        
-          <a class="article-more-a" href="/2018/12/22/java基础复习/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/22/java基础复习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/">jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/" class="archive-article-date">
-  	<time datetime="2018-11-15T06:49:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？<br>查了查，有的说是1.6对象，1.7引用，1.8对象。<br>也有的说存的就是引用。<br><a href="https://www.zhihu.com/question/57109429" title="JVM 常量池中存储的是对象还是引用呢？" target="_blank" rel="noopener">JVM 常量池中存储的是对象还是引用呢？</a></p>
-        
-          <a class="article-more-a" href="/2018/11/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -657,8 +356,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

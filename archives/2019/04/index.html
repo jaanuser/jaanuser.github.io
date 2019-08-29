@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>redis持久化 | jaan-个人博客</title>
+  <title>Archives: 2019/4 | jaan-个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我们都知道redis的数据都是在内存里面的，如果服务器宕机或者重启，就会导致数据丢失。所以必须要有一种给机制来保证redis的数据不会因为故障而丢失，这种机制就是redis的持久化机制。redis的持久化机制有两种：快照模式和AOF日志。redis 4.0 开始可以使用两种模式的结合快照是一次全量备份，存储的是内存数据的二进制序列化形式。AOF日志是连续的增量备份，记录的是内存数据修改的指令记录文">
-<meta name="keywords" content="redis,多线程">
-<meta property="og:type" content="article">
-<meta property="og:title" content="redis持久化">
-<meta property="og:url" content="http://yoursite.com/2019/08/11/redis持久化/index.html">
+  <meta name="description" content="会写拍照的程序员不是好生物汪">
+<meta name="keywords" content="java,算法,JVM,后端,高并发,Linux">
+<meta property="og:type" content="website">
+<meta property="og:title" content="jaan-个人博客">
+<meta property="og:url" content="http://yoursite.com/archives/2019/04/index.html">
 <meta property="og:site_name" content="jaan-个人博客">
-<meta property="og:description" content="我们都知道redis的数据都是在内存里面的，如果服务器宕机或者重启，就会导致数据丢失。所以必须要有一种给机制来保证redis的数据不会因为故障而丢失，这种机制就是redis的持久化机制。redis的持久化机制有两种：快照模式和AOF日志。redis 4.0 开始可以使用两种模式的结合快照是一次全量备份，存储的是内存数据的二进制序列化形式。AOF日志是连续的增量备份，记录的是内存数据修改的指令记录文">
+<meta property="og:description" content="会写拍照的程序员不是好生物汪">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-11T03:06:09.564Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redis持久化">
-<meta name="twitter:description" content="我们都知道redis的数据都是在内存里面的，如果服务器宕机或者重启，就会导致数据丢失。所以必须要有一种给机制来保证redis的数据不会因为故障而丢失，这种机制就是redis的持久化机制。redis的持久化机制有两种：快照模式和AOF日志。redis 4.0 开始可以使用两种模式的结合快照是一次全量备份，存储的是内存数据的二进制序列化形式。AOF日志是连续的增量备份，记录的是内存数据修改的指令记录文">
+<meta name="twitter:title" content="jaan-个人博客">
+<meta name="twitter:description" content="会写拍照的程序员不是好生物汪">
   
     <link rel="alternative" href="/atom.xml" title="jaan-个人博客" type="application/atom+xml">
   
@@ -155,196 +154,102 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-redis持久化" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      redis持久化
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/04/21/mysql索引机制学习笔记/" class="archive-article-date">
+  	<time datetime="2019-04-21T14:50:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-21</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/04/21/mysql索引机制学习笔记/">mysql索引机制学习笔记</a>
     </h1>
   
 
-        
-        <a href="/2019/08/11/redis持久化/" class="archive-article-date">
-  	<time datetime="2019-08-11T03:03:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们都知道redis的数据都是在内存里面的，如果服务器宕机或者重启，就会导致数据丢失。所以必须要有一种给机制来保证redis的数据不会因为故障而丢失，这种机制就是redis的持久化机制。<br>redis的持久化机制有两种：快照模式和AOF日志。redis 4.0 开始可以使用两种模式的结合<br>快照是一次全量备份，存储的是内存数据的二进制序列化形式。AOF日志是连续的增量备份，记录的是内存数据修改的指令记录文本。数据库重启时进行需要加载AOF日志进行指令重放这个时间就非常慢，所以要定期给AOF瘦身。</p>
-<a id="more"></a>
-<h5 id="快照原理"><a href="#快照原理" class="headerlink" title="快照原理"></a>快照原理</h5><p>redis是单线程程序，这个线程要同时负责多个客户端套接字的并发读写和内存数据结构的逻辑读写。<br>在服务线上请求的同时，redis还需要进行内存快照，内存快照要求redis必须进行文件IO操作，可是<strong>文件IO操作不能使用多路复用API</strong>这意味着单线程在服务是线上请求的同时还要进行IO操作，而文件IO操作会严重拖累服务器的性能。<br>redis一边持久化一边相应客户端的请求。持久化的同时内存的数据还在改变，如果正在持久化一个大型的hash字典，这时候一个请求过来将他删掉了，可是还没有持久化完呢，这怎么办？redis使用操作系统的<strong>COW（Copy On Write）</strong>机制来实现快照持久化。</p>
-<h5 id="fork（多线程）"><a href="#fork（多线程）" class="headerlink" title="fork（多线程）"></a>fork（多线程）</h5><p>redis在持久化的时候调用glibc的函数fork产生一个子进程，子进程刚刚产生时，它和父进程共享内存里面的代码段和数据段，这时候你可以把父子进程想想成一个连体婴儿。这是Linux的操作系统机制，为了节约内存资源。载金城分离的一瞬间，内存的增长几乎没有明显变化。<br>这个时候就会使用操作系统的COW机制来进行数据页面的分离，当父进程对数据段中其中一个页面的数据修改的时候就会将这个被共享的页面复制一份分离出来，在副本上进行修改。随着父进程的持续进行越来越多的共享页面被分离出来，内存持续增长，但是也不会超过数据内存的2倍大小，另外redis里面的冷数据往往占比大，因为父进程修改的是页面复制后的副本，所以子进程的数据段是没有被修改的，所以子进程就可以安心的遍历数据进行序列化写磁盘了。</p>
-<h5 id="AOF原理"><a href="#AOF原理" class="headerlink" title="AOF原理"></a>AOF原理</h5><p>AOF日志存储的是redis服务器顺序指令序列，<strong>AOF只对内存进行修改的指令进行记录</strong>,redis在接收到客户端修改指令后进行参数校验，逻辑处理，如果没问题就立即将指令存入AOF，也就是先执行命令，再将命令存入日志。<br>redis再长期运行时，AOF日志会越来越长，如果宕机，重放AOF时花费的时间会非常的长，所以需要对AOF瘦身</p>
-<h5 id="AOF重写"><a href="#AOF重写" class="headerlink" title="AOF重写"></a>AOF重写</h5><p>redis提供了bgreweiteaof指令用于对AOF瘦身，其原理就是开辟一个子进程对内存进行遍历，将内存中的数据转换成redis指令，（由 新建 2 -&gt; 1 -&gt; 5 -&gt; 0 -&gt;6 这些指令直接变成 新建 6）序列化到一个新的AOF日志文件中，序列化完毕后再将操作期间放生的增量AOF日志追加到新建的AOF中，追加完毕后立即代替旧的AOF就完成了瘦身</p>
-<h5 id="fsync"><a href="#fsync" class="headerlink" title="fsync"></a>fsync</h5><p>AOF日志是以文件的形式存在的，当程序对AOF日志文件进行写操作时，实际是将内容写到了内核为文件描述符分配的一个内存缓存中，然后内核会异步将脏数据刷回到磁盘。<br>这就意味这如果机器突然宕机，AOF日志内容可能还没有来得及完全刷到磁盘中，这个时候就出现日志丢失，那该怎么办?<br>linux的glibc提供了fsync(int fd)函数可以将指定的文件的内容强制从内核缓存刷到磁盘。只要redis实时调用fsync函数就可以保证AOF日志不丢失，但是它是一个磁盘IO操作，很慢，日过redis执行一条指令就要fsync一次的话，redis高性能的地位就不保了。<br>在生产化境的服务器中，redis通常是1s左右执行一次fsync，，这个刷新的周期是可以配置的。<br>redis同样提供了两种策略1永远不调用fsync，让操作系统来决定何时来刷新磁盘，这样做很不安全。另一个时来一个指令调用一次fsync</p>
-<h5 id="运维"><a href="#运维" class="headerlink" title="运维"></a>运维</h5><p>快照是通过开启子进程的方式进行的，他是一个比较消耗资源的操作<br>1.遍历整个内存，大块写磁盘会加重系统负载<br>2.AOF的fsync是一个耗时的IO操作，他会降低redis性能，同时也会增加系统IO负担。<br>所以通常redis主结点不会进行持久化操作，持久化操作主要是在从节点进行，从节点时备份结点，没有来自客户端请求的压力，他的操作系统资源往往比较充沛<br>但是如果出现网络分区，从节点长期连不上主节点，就会出现数据不一致的问题，特别是在网络分区出现的情况下。</p>
-<h5 id="redis4-0混合持久化"><a href="#redis4-0混合持久化" class="headerlink" title="redis4.0混合持久化"></a>redis4.0混合持久化</h5><p>重启redis时，我们很少使用rdb快照来恢复内存状态，因为会丢失大量数据，我们通常使用AOF日志重放，但是日志重放相对于快照来说要慢很多。4.0为了解决这个问题，带来了一个新的持久化选项-混合持久化<br>快照和增量的AOF存在一起，这里的AOF日志不在是全量的日志，而是自持久化开始到持久化结束的这段时间发生的增量AOF日志，通常这部分AOF日志很小。</p>
-<h5 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h5><ul>
-<li>只使用快照来持久化是不是还是会丢失最后的一小部分数据？是</li>
-<li>持久化是在什么时候进行的呢？</li>
-<li>进行AOF持久化的时候每执行一个命令都要进行磁盘IO记录下数据修改指令进行随机读盘操作是不是但是性能   下降一半以上呀。？<br>程序对AOF日志文件进行写操作时，实际是将内容写到了内核为文件描述符分配的一个内存缓存中，然后内核会异步将脏数据刷回到磁盘，刷回到磁盘也不是一个请求执行一次的</li>
-<li>AOF持久化的时候如果有查询的命令过来，是否也要记录查询的命令呢？<br>只记录对内存进行更改的命令，并且是先执行后再写入AOF</li>
-<li>mysql中开始事务时的试图跟这个的快照的技术是不是差不多？</li>
-<li>如果redis跑在win上redis里面用到的Linux的api（如处理多客户端连接时多路复用时使用的epoll）的一些技术怎么弄？</li>
-</ul>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/11/redis持久化/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2019/08/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/08/10/redis如何处理多客户端连接/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">redis如何处理多客户端连接</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/04/18/操作系统寻址/" class="archive-article-date">
+  	<time datetime="2019-04-18T13:17:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
+</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    	 
   
-  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/04/18/操作系统寻址/">操作系统寻址</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
   
 
-  
-
-  
+    
 
 
           </div>
@@ -367,8 +272,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -429,11 +334,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,7 +350,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
             
             <div class="clearfix"></div>
