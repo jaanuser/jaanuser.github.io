@@ -233,6 +233,88 @@
 
 
   
+    <article id="post-关于继承Thread与实现Runnable创建线程可能发生的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/关于继承Thread与实现Runnable创建线程可能发生的问题/">关于继承Thread与实现Runnable创建线程可能发生的问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/30/关于继承Thread与实现Runnable创建线程可能发生的问题/" class="archive-article-date">
+  	<time datetime="2019-06-30T08:05:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="继承Thead类："><a href="#继承Thead类：" class="headerlink" title="继承Thead类："></a>继承Thead类：</h6><p>每次启动一个线程直接就是new的这个继承Thread的子类<code>MyThread mt1= new MyThread();</code>。所以相当于创建了多个线程，每个线程自己做自己的事情</p>
+<h6 id="实现runnable接口："><a href="#实现runnable接口：" class="headerlink" title="实现runnable接口："></a>实现runnable接口：</h6><p>然后<code>new Thread（Runnable runnable）</code>，如果传入的runnable每次都是同一个的话，就相当与多个线程共同完成一个Runnable</p>
+<h6 id="通过Runnable"><a href="#通过Runnable" class="headerlink" title="通过Runnable"></a>通过Runnable</h6><p>匿名内部类实现：这种：<code>new Thread（new Runnable（）{}）</code>相当于每次传入的Runnable都是新的，就是多个线程，每个线程完成自己的Runnable</p>
+        
+          <a class="article-more-a" href="/2019/06/30/关于继承Thread与实现Runnable创建线程可能发生的问题/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/30/关于继承Thread与实现Runnable创建线程可能发生的问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-leecode540-有序数组中的单一元素（最优解）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -878,82 +960,10 @@
 
 
   
-    <article id="post-jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/">jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/" class="archive-article-date">
-  	<time datetime="2018-11-15T06:49:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？<br>查了查，有的说是1.6对象，1.7引用，1.8对象。<br>也有的说存的就是引用。<br><a href="https://www.zhihu.com/question/57109429" title="JVM 常量池中存储的是对象还是引用呢？" target="_blank" rel="noopener">JVM 常量池中存储的是对象还是引用呢？</a></p>
-        
-          <a class="article-more-a" href="/2018/11/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1067,19 +1077,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IO模型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
             
             <div class="clearfix"></div>
