@@ -17,7 +17,9 @@
 <meta property="og:description" content="git的学习git基础配置user信息（配置user.name和user.email）12$ git config --golbal user.name ‘your_name’$ git config --golbal user.email ‘your_email’  config的三个作用域$ git config --local (只对某个仓库有效) $ git config --global">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/assets/git1.png">
-<meta property="og:updated_time" content="2019-12-18T13:45:37.610Z">
+<meta property="og:image" content="http://yoursite.com/assets/git2.png">
+<meta property="og:image" content="http://yoursite.com/assets/git3.png">
+<meta property="og:updated_time" content="2019-12-19T15:47:50.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git学习">
 <meta name="twitter:description" content="git的学习git基础配置user信息（配置user.name和user.email）12$ git config --golbal user.name ‘your_name’$ git config --golbal user.email ‘your_email’  config的三个作用域$ git config --local (只对某个仓库有效) $ git config --global">
@@ -187,7 +189,7 @@ $ git config --system （对系统所有的用户有效）</code></pre><a id="mo
 $ git init</code></pre><p>2.用git新建项目并生成本地目录</p>
 <pre><code>$ cd 某个文件夹
 $ git init your_project #会在当前路径下创建与项目名同名的文件夹
-$ cd your_project</code></pre><h4 id="认识工作区和暂存区"><a href="#认识工作区和暂存区" class="headerlink" title="认识工作区和暂存区"></a>认识工作区和暂存区</h4><p>#####提交文件<br>git提交文件的时候先要把文件add到暂存区然后才能commit，直接commit文件的话会提示该文件没有受git管理</p>
+$ cd your_project</code></pre><h4 id="认识工作区和暂存区"><a href="#认识工作区和暂存区" class="headerlink" title="认识工作区和暂存区"></a>认识工作区和暂存区</h4><h5 id="提交文件"><a href="#提交文件" class="headerlink" title="提交文件"></a>提交文件</h5><p>git提交文件的时候先要把文件add到暂存区然后才能commit，直接commit文件的话会提示该文件没有受git管理</p>
 <p>$ git commit -m’add readme’ (-m是这次变更的理由)<br>还没有add直接commit会出现下面的错误<br>add之后文件会放在暂存区</p>
 <pre><code>$ git commit -m&apos;add reademe&apos;
 On branch master
@@ -214,6 +216,58 @@ Date:   Wed Dec 18 20:33:13 2019 +0800
 
     add readme</code></pre><p>git add -u 可以将仓库中已有的文件发生过修改的都add</p>
 <p><img src="/assets/git1.png" alt></p>
+<h4 id="给文件重命名的便捷方法"><a href="#给文件重命名的便捷方法" class="headerlink" title="给文件重命名的便捷方法"></a>给文件重命名的便捷方法</h4><h6 id="最基本的方法"><a href="#最基本的方法" class="headerlink" title="最基本的方法"></a>最基本的方法</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">mv readme.txt readme.md (本地重命名文件)</span><br><span class="line"></span><br><span class="line">$ git add readme.md</span><br><span class="line">//$ git status(显示add了新文件,)</span><br><span class="line">//On branch master</span><br><span class="line">//Changes to be committed:</span><br><span class="line">//(use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span><br><span class="line"></span><br><span class="line">//new file:   readme.md</span><br><span class="line"></span><br><span class="line">//Changes not staged for commit:(有新变动,但是还没到暂存区)</span><br><span class="line">//(use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">//(use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line"></span><br><span class="line">//deleted:    readme.txt</span><br><span class="line"></span><br><span class="line">$ git rm readme.txt</span><br><span class="line">//$ git status</span><br><span class="line">//On branch master</span><br><span class="line">//Changes to be committed:</span><br><span class="line">//  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span><br><span class="line"></span><br><span class="line">//		renamed:    readme.txt -&gt; readme.md(系统认为你在重命名文件)</span><br></pre></td></tr></table></figure>
+
+<p>以上的意思是在本地修改文件名字,然后修改后的文件add到暂存区,然后rm旧文件.<br>我们不用上的笨办法修改,所以执行下面的命令,将工作路径上的所有变更清理掉</p>
+<h6 id="git-reset-–hard"><a href="#git-reset-–hard" class="headerlink" title="$ git reset –hard"></a>$ git reset –hard</h6><p>这时查看log里面没有任何变动,并且发现本地的文件名字又变回了readme.txt</p>
+<p>在本地修改名字后没有add 查看status</p>
+<pre><code>$ git status
+On branch master
+Changes not staged for commit:
+  (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+        deleted:    readme.txt
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+        readme.md
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre><p>然后执行 $ git reset –hard<br>本地除了readme.md还在以外,还多了readme.txt<br>手动将本地.txt删除<br>重复上面的add mv reset 恢复原样</p>
+<h6 id="使用简便的命令"><a href="#使用简便的命令" class="headerlink" title="使用简便的命令"></a>使用简便的命令</h6><h6 id="git-mv-readme-txt-readme-md"><a href="#git-mv-readme-txt-readme-md" class="headerlink" title="$ git mv readme.txt readme.md"></a>$ git mv readme.txt readme.md</h6><pre><code>$ git status
+On branch master
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+        renamed:    readme.txt -&gt; readme.md</code></pre><p>然后commit提交</p>
+<h4 id="通过git-log-查看版本演变历史"><a href="#通过git-log-查看版本演变历史" class="headerlink" title="通过git log 查看版本演变历史"></a>通过git log 查看版本演变历史</h4><h6 id="git-log-只能查看当前分支的log"><a href="#git-log-只能查看当前分支的log" class="headerlink" title="$ git log (只能查看当前分支的log)"></a>$ git log (只能查看当前分支的log)</h6><h6 id="git-log-–all-所有分支的log都能看到"><a href="#git-log-–all-所有分支的log都能看到" class="headerlink" title="$ git log –all(所有分支的log都能看到)"></a>$ git log –all(所有分支的log都能看到)</h6><p>(老师讲的时候 加all才能看到所有分支 我的不加也能,还有 我的不加all后面加了分支名字 也是看的全部的)</p>
+<h6 id="git-log-–graph-以图形化的形式展示"><a href="#git-log-–graph-以图形化的形式展示" class="headerlink" title="$ git log –graph(以图形化的形式展示)"></a>$ git log –graph(以图形化的形式展示)</h6><h6 id="git-log-–oneline-每个commit只用一行简短显示"><a href="#git-log-–oneline-每个commit只用一行简短显示" class="headerlink" title="$ git log –oneline (每个commit只用一行简短显示)"></a>$ git log –oneline (每个commit只用一行简短显示)</h6><h6 id="git-log-n-number-只显示最近几个commit"><a href="#git-log-n-number-只显示最近几个commit" class="headerlink" title="$ git log -n[number] (只显示最近几个commit)"></a>$ git log -n[number] (只显示最近几个commit)</h6><p>两者也可以一起用</p>
+<h4 id="查看-创建-分支"><a href="#查看-创建-分支" class="headerlink" title="查看 创建 分支"></a>查看 创建 分支</h4><p>切换分支的时候必须在工作路径下</p>
+<h6 id="git-branch-对分支的增删查等操作-eg-git-branch-new-branch-会从当前的工作版本创建一个叫做new-branch的新分支"><a href="#git-branch-对分支的增删查等操作-eg-git-branch-new-branch-会从当前的工作版本创建一个叫做new-branch的新分支" class="headerlink" title="$ git branch 对分支的增删查等操作,eg:git branch new_branch 会从当前的工作版本创建一个叫做new_branch的新分支"></a>$ git branch 对分支的增删查等操作,eg:git branch new_branch 会从当前的工作版本创建一个叫做new_branch的新分支</h6><h6 id="git-branch-D-new-branch-强制删除叫做new-branch的分支"><a href="#git-branch-D-new-branch-强制删除叫做new-branch的分支" class="headerlink" title="$ git branch -D new_branch(强制删除叫做new_branch的分支)"></a>$ git branch -D new_branch(强制删除叫做new_branch的分支)</h6><h6 id="git-branch-显示本地分支只显示名字"><a href="#git-branch-显示本地分支只显示名字" class="headerlink" title="$ git branch(显示本地分支只显示名字)"></a>$ git branch(显示本地分支只显示名字)</h6><h6 id="git-branch-v-跟-verbose一个意思-不仅显示名字还显示分支当前指向的提交记录的哈希值"><a href="#git-branch-v-跟-verbose一个意思-不仅显示名字还显示分支当前指向的提交记录的哈希值" class="headerlink" title="$ git branch -v(跟-verbose一个意思,不仅显示名字还显示分支当前指向的提交记录的哈希值)"></a>$ git branch -v(跟-verbose一个意思,不仅显示名字还显示分支当前指向的提交记录的哈希值)</h6><h6 id="git-branch-av-a显示所有本地及远端分支名"><a href="#git-branch-av-a显示所有本地及远端分支名" class="headerlink" title="$ git branch -av (-a显示所有本地及远端分支名)"></a>$ git branch -av (-a显示所有本地及远端分支名)</h6><h6 id="git-checkout-常用来创建和切换分支"><a href="#git-checkout-常用来创建和切换分支" class="headerlink" title="$ git checkout(常用来创建和切换分支)"></a>$ git checkout(常用来创建和切换分支)</h6><h6 id="git-checkout-temp-切换到temp分支"><a href="#git-checkout-temp-切换到temp分支" class="headerlink" title="$ git checkout temp (切换到temp分支)"></a>$ git checkout temp (切换到temp分支)</h6><h6 id="git-checkout-b-temp-415c5c8086e16-在415c5c8086e16上创建分支temp-并切换到temp"><a href="#git-checkout-b-temp-415c5c8086e16-在415c5c8086e16上创建分支temp-并切换到temp" class="headerlink" title="$ git checkout -b temp 415c5c8086e16(在415c5c8086e16上创建分支temp,并切换到temp)"></a>$ git checkout -b temp 415c5c8086e16(在415c5c8086e16上创建分支temp,并切换到temp)</h6><p>(上面的命令与 先用branch新建分支 再用checkout切换是一样的)<br>-b 表示基于当前分支内容创建新分支 并将上下文环境切换到新分支分支<br>当我们不指定 checkout 起点时，Git 默认从当前活动分支开始创建新的分支</p>
+<h6 id="git-commit-am’temp-branch-test-not-add’"><a href="#git-commit-am’temp-branch-test-not-add’" class="headerlink" title="$ git commit -am’temp branch test not add’"></a>$ git commit -am’temp branch test not add’</h6><h6 id="如果将修改过的文件没有add到暂存区直接提交的话时出错的-a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们没有经过git-add添加到暂存区-注意，新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的"><a href="#如果将修改过的文件没有add到暂存区直接提交的话时出错的-a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们没有经过git-add添加到暂存区-注意，新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的" class="headerlink" title="如果将修改过的文件没有add到暂存区直接提交的话时出错的,a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们没有经过git add添加到暂存区 !!!注意，新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的"></a>如果将修改过的文件没有add到暂存区直接提交的话时出错的,a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们没有经过git add添加到暂存区 !!!注意，新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的</h6><h4 id="通过图形界面查看历史版本"><a href="#通过图形界面查看历史版本" class="headerlink" title="通过图形界面查看历史版本"></a>通过图形界面查看历史版本</h4><h6 id="gitk"><a href="#gitk" class="headerlink" title="$ gitk"></a>$ gitk</h6><p><img src="/assets/git2.png" alt></p>
+<p>View - new view 可以自定义新视图(只查看某些分支)<br>patch 显示的时文件的改动内容<br>tree 是当前commit的所有文件<br>右击commit还可以添加tag<br>每个commit 里面会记录父亲 和儿子commit的哈希值</p>
+<h4 id="探秘-git目录"><a href="#探秘-git目录" class="headerlink" title="探秘.git目录"></a>探秘.git目录</h4><p>git没有远端支持也能实现本地的版本控制,是怎么实现的呢?<br>在本地创建完仓库之后就会生成一个.git的隐藏的文件夹<br>进入.git文件夹 </p>
+<pre><code>drwxr-xr-x 1 jaan 197121   0 12月 19 21:45 ./
+drwxr-xr-x 1 jaan 197121   0 12月 19 21:45 ../
+-rw-r--r-- 1 jaan 197121  25 12月 19 21:45 COMMIT_EDITMSG
+-rw-r--r-- 1 jaan 197121 130 12月 18 19:45 config
+-rw-r--r-- 1 jaan 197121  73 12月 18 19:45 description
+-rw-r--r-- 1 jaan 197121 547 12月 19 21:56 gitk.cache
+-rw-r--r-- 1 jaan 197121  21 12月 19 21:42 HEAD
+drwxr-xr-x 1 jaan 197121   0 12月 18 19:45 hooks/
+-rw-r--r-- 1 jaan 197121 553 12月 19 21:45 index
+drwxr-xr-x 1 jaan 197121   0 12月 18 19:45 info/
+drwxr-xr-x 1 jaan 197121   0 12月 18 20:33 logs/
+drwxr-xr-x 1 jaan 197121   0 12月 19 21:45 objects/
+-rw-r--r-- 1 jaan 197121  41 12月 19 15:10 ORIG_HEAD
+drwxr-xr-x 1 jaan 197121   0 12月 18 19:45 refs/</code></pre><p>用cat查看HEAD文件</p>
+<pre><code>$ cat HEAD
+ref: refs/heads/temp</code></pre><p>里面显示的是一个引用,意思就是当前head指向的分支<br>切换分支之后HEAD文件里面的引用会变<br>heads文件夹里面都是所有的分支<br>每个分支一个文件 如temp分支就是 heads文件夹里面的temp文件 temp文件夹里面的内容是一个哈希码</p>
+<p>所有的对象都在objects文件夹里 该文件夹里有若干个2个字符名字的文件夹,2个字符的文件夹名字加上该文件夹里文件的名字就是 一个对象的哈希值</p>
+<h6 id="git-cat-file-t-哈希码-查看该哈希码的对象类型-commit-tree-blob"><a href="#git-cat-file-t-哈希码-查看该哈希码的对象类型-commit-tree-blob" class="headerlink" title="$ git cat-file -t 哈希码 查看该哈希码的对象类型 (commit tree blob)"></a>$ git cat-file -t 哈希码 查看该哈希码的对象类型 (commit tree blob)</h6><h6 id="git-cat-file-p-哈希码-查看该哈希码的对象内容"><a href="#git-cat-file-p-哈希码-查看该哈希码的对象内容" class="headerlink" title="$ git cat-file -p 哈希码 查看该哈希码的对象内容"></a>$ git cat-file -p 哈希码 查看该哈希码的对象内容</h6><p>在git里面只要文件的内容相同,他就是同一个blob,跟名字是否相同没有关系.</p>
+<h4 id="commit-tree-blob-三者之间的关系"><a href="#commit-tree-blob-三者之间的关系" class="headerlink" title="commit tree blob 三者之间的关系"></a>commit tree blob 三者之间的关系</h4><p><img src="/assets/git3.png" alt><br>commit中有个tree<br>tree代表文件夹<br>blob代表文件 只要内容一样的就是同一个blob 文件名字是否一样不影响</p>
+<p>新的文件不add并且之前没有add过那么是没有object的,add之后就有了 没有commit也有<br>如果修改一个有object的文件,但是不add是否会生成新的object呢, 不会 也是add之后才有</p>
 
       
 
@@ -438,19 +492,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,6 +513,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,11 +536,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
             
             <div class="clearfix"></div>
