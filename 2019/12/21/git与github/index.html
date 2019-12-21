@@ -6,20 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？ | jaan-个人博客</title>
+  <title>git与github | jaan-个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？查了查，有的说是1.6对象，1.7引用，1.8对象。也有的说存的就是引用。JVM 常量池中存储的是对象还是引用呢？">
-<meta name="keywords" content="JVM">
+  <meta name="description" content="在github创建个人仓库点击 new repository">
+<meta name="keywords" content="git,github">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？">
-<meta property="og:url" content="http://yoursite.com/2018/11/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/index.html">
+<meta property="og:title" content="git与github">
+<meta property="og:url" content="http://yoursite.com/2019/12/21/git与github/index.html">
 <meta property="og:site_name" content="jaan-个人博客">
-<meta property="og:description" content="jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？查了查，有的说是1.6对象，1.7引用，1.8对象。也有的说存的就是引用。JVM 常量池中存储的是对象还是引用呢？">
+<meta property="og:description" content="在github创建个人仓库点击 new repository">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-29T15:09:53.394Z">
+<meta property="og:image" content="http://yoursite.com/assets/git8.png">
+<meta property="og:image" content="http://yoursite.com/assets/git9.png">
+<meta property="og:image" content="http://yoursite.com/assets/git10.png">
+<meta property="og:image" content="http://yoursite.com/assets/git11.png">
+<meta property="og:image" content="http://yoursite.com/assets/git12.png">
+<meta property="og:updated_time" content="2019-12-21T11:29:19.079Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？">
-<meta name="twitter:description" content="jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？查了查，有的说是1.6对象，1.7引用，1.8对象。也有的说存的就是引用。JVM 常量池中存储的是对象还是引用呢？">
+<meta name="twitter:title" content="git与github">
+<meta name="twitter:description" content="在github创建个人仓库点击 new repository">
+<meta name="twitter:image" content="http://yoursite.com/assets/git8.png">
   
     <link rel="alternative" href="/atom.xml" title="jaan-个人博客" type="application/atom+xml">
   
@@ -155,40 +161,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git与github" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？
+      git与github
     </h1>
   
 
         
-        <a href="/2018/11/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/" class="archive-article-date">
-  	<time datetime="2018-11-15T06:49:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-15</time>
+        <a href="/2019/12/21/git与github/" class="archive-article-date">
+  	<time datetime="2019-12-21T11:27:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？<br>查了查，有的说是1.6对象，1.7引用，1.8对象。<br>也有的说存的就是引用。<br><a href="https://www.zhihu.com/question/57109429" title="JVM 常量池中存储的是对象还是引用呢？" target="_blank" rel="noopener">JVM 常量池中存储的是对象还是引用呢？</a></p>
+        <h4 id="在github创建个人仓库"><a href="#在github创建个人仓库" class="headerlink" title="在github创建个人仓库"></a>在github创建个人仓库</h4><p>点击 new repository</p>
+<p><img src="/assets/git8.png" alt></p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果您说的确实是runtime constant pool（而不是interned string pool / StringTable之类的其他东西）的话，其中的引用类型常量（例如CONSTANT_String、CONSTANT_Class、CONSTANT_MethodHandle、CONSTANT_MethodType之类）都存的是引用，实际的对象还是存在Java heap上的。</span><br><span class="line">作者：RednaxelaFX</span><br><span class="line">链接：https://www.zhihu.com/question/57109429/answer/151717241</span><br><span class="line">来源：知乎</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HotSpot VM的StringTable的本体在native memory里。它持有String对象的引用而不是String对象的本体。被引用的String还是在Java heap里。一直到JDK6，这些被intern的String在permgen里，JDK7开始改为放在普通Java heap里。</span><br></pre></td></tr></table></figure>
-
-<p>我的JDK是1.8的下面是我的测试，测试是保存的对象还是引用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String st1 = new StringBuilder().append(&quot;ja&quot;).append(&quot;va&quot;).toString().intern();//指向堆中</span><br><span class="line">String st2 = st1.intern();</span><br><span class="line">System.out.println(st1 == st2);//true</span><br><span class="line"></span><br><span class="line">String st1 = new StringBuilder().append(&quot;hello&quot;).append(&quot;world&quot;).toString().intern();//指向堆中</span><br><span class="line">String st2 = st1.intern();</span><br><span class="line">System.out.println(st1 == st2);//true</span><br><span class="line"></span><br><span class="line">st1肯定是堆中的String的引用，st2 肯定是字符串常量池中的引用 两个测试都是true说明1.8中字符串常量池中存放的是引用。</span><br></pre></td></tr></table></figure>
-
-<p>两个测试都是true说明1.8中字符串常量池中存放的是应用。</p>
-<p>但是，在测试时一开始写的代码是下面这种（写错了，本来是打算测试常量池中存放的是对象还是引用，下面的代码实际测的是 st1一开始在没在字符串常量池中）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String st1 = new StringBuilder().append(&quot;ja&quot;).append(&quot;va&quot;).toString();</span><br><span class="line">System.out.println(st1.intern() == st1); //true</span><br><span class="line">返回true 说明一开始常量池中没有“java”</span><br><span class="line"></span><br><span class="line">String st1 = new StringBuilder().append(&quot;hello&quot;).append(&quot;word&quot;).toString();</span><br><span class="line">System.out.println(st1.intern() == st1); //false</span><br><span class="line">返回false 说明一开始常量池中没有“java”</span><br><span class="line">编译的时候“hello”“world”放入字符串常量池，这时候里面没有“helloworld”。st1是堆中“helloworld”对象的引用。</span><br><span class="line">执行st1.intern()的时候 将“helloworld”放入常量池，因为执行这句之前常量池中没有“helloworld”所以st1.intern()返回的是堆中“helloworld”的引用。 st1也是堆中“java”的引用 应该是true，但是是false</span><br></pre></td></tr></table></figure>
-
-
+<p>public是大家都能看到,只有我们选择的人才能提交<br>private 浏览和提交都是我们来选择用户<br>最后的license是开源许可证类型</p>
+<p>创建仓库的时候选择了license,所以github自动为我们创建了license文件,就有了一次提交.</p>
+<h4 id="把本地仓库同步到github"><a href="#把本地仓库同步到github" class="headerlink" title="把本地仓库同步到github"></a>把本地仓库同步到github</h4><h5 id="在本地关联远端仓库"><a href="#在本地关联远端仓库" class="headerlink" title="在本地关联远端仓库"></a>在本地关联远端仓库</h5><p>进入GitHub的仓库后 点击 Clone or download 获取url</p>
+<p>$ git remote add 仓库名字(自己设定与远程的名字是否相同无关) url</p>
+<p>之后执行 git remote -v </p>
+<pre><code>$ git remote -v
+gitstudy_github git@github.com:jaanuser/gitstudy.git (fetch)
+gitstudy_github git@github.com:jaanuser/gitstudy.git (push)
+fetch代表拉,从远端拉到本地   push代表提交 从本地提交到远端</code></pre><p>$ git push gitstudy_github –all (–all是push所有的分支,也可以写具体的分支push)</p>
+<pre><code>$ git push gitstudy_github --all
+Enumerating objects: 43, done.
+Counting objects: 100% (43/43), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (32/32), done.
+Writing objects: 100% (43/43), 23.31 KiB | 1.46 MiB/s, done.
+Total 43 (delta 13), reused 0 (delta 0)
+remote: Resolving deltas: 100% (13/13), done.
+remote:
+remote: Create a pull request for &apos;temp&apos; on GitHub by visiting:
+remote:      https://github.com/jaanuser/gitstudy/pull/new/temp
+remote:
+To github.com:jaanuser/gitstudy.git
+ * [new branch]      temp -&gt; temp
+ ! [rejected]        master -&gt; master (fetch first)
+error: failed to push some refs to &apos;git@github.com:jaanuser/gitstudy.git&apos;
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., &apos;git pull ...&apos;) before pushing again.
+hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.
+发现master分支被拒绝了push,意思就是远程有的commit本地没有,需要先拉到本地再推</code></pre><p>$ git fetch gitstudy_github master 执行该命令只是将远端的拉下来了,还没有与本地的合并<br>$ git merge gitstudy_github/master 执行合并,但是发现执行错误</p>
+<pre><code>$ git merge gitstudy_github/master
+fatal: refusing to merge unrelated histories
+说没有共同的祖先</code></pre><p>$ git merge  –allow-unrelated-histories gitstudy_github/master 加入参数后可以了<br>执行后进入一个文件,因为merge后会生成一个新的commit,所以这个文件是让我们填写这个commit的message的</p>
+<p>merge前后<br><img src="/assets/git9.png" alt><br><img src="/assets/git10.png" alt><br>merge后github上的文件才出现在本地<br>老师的merge前后<br><img src="/assets/git11.png" alt><br>因为老师的之前对master分支进行过间隔的commit合并,所以一开始master好多独立的</p>
+<p>merge完之后就可以push了<br>$ git push gitstudy_github master<br>push后<br><img src="/assets/git12.png" alt><br>上面显示13个commit都是master的,但是之前执行-all的push另一个分支的commit为什么没有显示</p>
+<p>具体merge是怎么进行的看下文连接<br><a href="https://blog.csdn.net/liuxiaoheng1992/article/details/79108233" title="merge与rebase的区别" target="_blank" rel="noopener">merge与rebase的区别</a></p>
+<p>git pull来拉取代码，git pull相当于是git fetch + git merge，<br>如果运行git pull -r，也就是git pull –rebase，相当于git fetch + git rebase</p>
+<h4 id="不同人修改了不同文件如何处理"><a href="#不同人修改了不同文件如何处理" class="headerlink" title="不同人修改了不同文件如何处理"></a>不同人修改了不同文件如何处理</h4>
       
 
       
@@ -222,7 +256,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
         		</li>
       		
 		</ul>
@@ -278,7 +316,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/15/jvm中字符串常量池里面到底是存的string对象，还是堆中string对象的引用呢？/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/21/git与github/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,15 +330,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/22/java基础复习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          java基础复习
-        
-      </div>
-    </a>
   
+    <a href="/2019/12/18/git学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/git2.png">
 <meta property="og:image" content="http://yoursite.com/assets/git3.png">
 <meta property="og:image" content="http://yoursite.com/assets/git7.png">
-<meta property="og:updated_time" content="2019-12-20T14:37:02.634Z">
+<meta property="og:updated_time" content="2019-12-21T06:39:20.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git学习">
 <meta name="twitter:description" content="git的学习git基础配置user信息（配置user.name和user.email）12$ git config --golbal user.name ‘your_name’$ git config --golbal user.email ‘your_email’  config的三个作用域$ git config --local (只对某个仓库有效) $ git config --global">
@@ -353,7 +353,7 @@ Deleted branch detached_head (was cd2670e).</code></pre><h4 id="怎么修改最�
 <h4 id="开发中临时加塞了紧急任务怎么办"><a href="#开发中临时加塞了紧急任务怎么办" class="headerlink" title="开发中临时加塞了紧急任务怎么办"></a>开发中临时加塞了紧急任务怎么办</h4><p>当你受中的工作还没commit,在工作区或者是暂存区时,如果这时boss给你安排了一个任务,这时候我们因为还眉头搞完自己的,又不想提交,但是不提交的话就不能做boss的工作,这时就可以用stash命令(帮当前的改动放到一个容器里,保证手里时干净的,可以做其他事情,等手里再次干净的时候再把从容器中取出,继续改动)<br>$ git stash(将工作区和暂存区的变动打包放到一个容器中,类似于栈)<br>$ git stash list (可以查看容器中的内容)</p>
 <p>$ git stash apply(获取容器中最上面的信息,但是不弹出)<br>$ git stash pop(获取并弹出)</p>
 <h4 id="如何指定不需要git管理的文件"><a href="#如何指定不需要git管理的文件" class="headerlink" title="如何指定不需要git管理的文件"></a>如何指定不需要git管理的文件</h4><p>.gitignore<br>将不需要管理的文件或者文件夹添加到.gitignore文件里<br>例如<br>*.class<br>*.jar<br>doc/<br>如果不加/的话,名字能匹配上的文件或者文件夹都不管理,如果加了/,只有匹配上的文件夹不管理,文件管理</p>
-<h4 id="如何将git仓库备份到本地"><a href="#如何将git仓库备份到本地" class="headerlink" title="如何将git仓库备份到本地"></a>如何将git仓库备份到本地</h4><p><img src="/assets/git7.png" alt></p>
+<h4 id="如何将git仓库备份到本地"><a href="#如何将git仓库备份到本地" class="headerlink" title="如何将git仓库备份到本地"></a>如何将git仓库备份到本地</h4><p>不同的仓库间进行的传输是通过某些协议来传输的<br><img src="/assets/git7.png" alt></p>
 <h6 id="哑协议与智能协议"><a href="#哑协议与智能协议" class="headerlink" title="哑协议与智能协议"></a>哑协议与智能协议</h6><p>直观区别:哑协议传输进度不可见;智能协议传输可见<br>传输速度:智能协议比哑协议快</p>
 <p>$ git clone –bare 仓库地址 备份在哪 (仓库地址的协议可以用上面的任意一种  –bare意思是裸仓库,不带工作区)(地址是本地就是本地,是远端就是远端)</p>
 <h4 id="查看创建远端仓库"><a href="#查看创建远端仓库" class="headerlink" title="查看创建远端仓库"></a>查看创建远端仓库</h4><p>查看关联的远程仓库信息</p>
@@ -472,6 +472,15 @@ git remote add &lt;name&gt; &lt;url&gt;</code></pre><p>远程仓库的名称推�
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/12/21/git与github/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          git与github
+        
+      </div>
+    </a>
   
   
     <a href="/2019/07/19/关于JVM虚拟机在编译器进行的优化/" id="article-nav-older" class="article-nav-link-wrap">
@@ -597,27 +606,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IO模型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -629,15 +626,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color5">IO模型</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
