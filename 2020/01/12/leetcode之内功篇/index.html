@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>leetcode之内功篇 | jaan-个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="会写拍照的程序员不是好生物汪">
-<meta name="keywords" content="java,算法,JVM,后端,高并发,Linux">
+  <meta name="description" content="*206 . 反转链表 *  反转一个单链表。 示例: 输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL 输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL 执行用时 :0 ms, 在所有 Java 提交中击败了100.00%的用户 内存消耗 :37.2 MB, 在所有 Java 提交中击败了31.47%的用户12345678910111213">
+<meta name="keywords" content="leetcode,算法,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode之内功篇">
 <meta property="og:url" content="http://yoursite.com/2020/01/12/leetcode之内功篇/index.html">
 <meta property="og:site_name" content="jaan-个人博客">
-<meta property="og:description" content="会写拍照的程序员不是好生物汪">
+<meta property="og:description" content="*206 . 反转链表 *  反转一个单链表。 示例: 输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL 输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL 执行用时 :0 ms, 在所有 Java 提交中击败了100.00%的用户 内存消耗 :37.2 MB, 在所有 Java 提交中击败了31.47%的用户12345678910111213">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-12T05:39:32.781Z">
+<meta property="og:updated_time" content="2020-01-12T16:13:23.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode之内功篇">
-<meta name="twitter:description" content="会写拍照的程序员不是好生物汪">
+<meta name="twitter:description" content="*206 . 反转链表 *  反转一个单链表。 示例: 输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL 输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL 执行用时 :0 ms, 在所有 Java 提交中击败了100.00%的用户 内存消耗 :37.2 MB, 在所有 Java 提交中击败了31.47%的用户12345678910111213">
   
     <link rel="alternative" href="/atom.xml" title="jaan-个人博客" type="application/atom+xml">
   
@@ -175,7 +175,72 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>*<em>206 . 反转链表 *</em></p>
+<hr>
+<p>反转一个单链表。</p>
+<p>示例:</p>
+<pre><code>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL</code></pre><hr>
+<pre><code>执行用时 :0 ms, 在所有 Java 提交中击败了100.00%的用户
+内存消耗 :37.2 MB, 在所有 Java 提交中击败了31.47%的用户</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        ListNode pre = head;</span><br><span class="line">        ListNode index =head.next;</span><br><span class="line">        pre.next = <span class="keyword">null</span>;</span><br><span class="line">        ListNode next;</span><br><span class="line">        <span class="keyword">while</span>(index != <span class="keyword">null</span>)&#123;</span><br><span class="line">            next = index.next;</span><br><span class="line">            index.next = pre;</span><br><span class="line"></span><br><span class="line">            pre = index;</span><br><span class="line">            index = next;</span><br><span class="line">            </span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+<p><strong>24 . 两两交换链表中的节点</strong></p>
+<hr>
+<p> 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。</p>
+<p>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</p>
+<p>示例:</p>
+<pre><code>给定 1-&gt;2-&gt;3-&gt;4, 你应该返回 2-&gt;1-&gt;4-&gt;3.</code></pre><hr>
+<p>方法一</p>
+<pre><code>执行用时 :0 ms, 在所有 Java 提交中击败了100.00%的用户
+内存消耗 :34.5 MB, 在所有 Java 提交中击败了82.19%的用户</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">swapPairs</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> head;</span><br><span class="line">        ListNode out = head.next;</span><br><span class="line">        ListNode pre = <span class="keyword">null</span>;</span><br><span class="line">        ListNode cur = head;</span><br><span class="line">        ListNode next = head.next;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(next != <span class="keyword">null</span>)&#123;</span><br><span class="line">            cur.next = next.next;</span><br><span class="line">            next.next = cur;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(pre != <span class="keyword">null</span>) pre.next = next;</span><br><span class="line">            pre = cur;</span><br><span class="line">            cur = cur.next;</span><br><span class="line">            next = cur == <span class="keyword">null</span> ? <span class="keyword">null</span> : cur.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> out;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法二:</p>
+<pre><code>执行用时 :0 ms, 在所有 Java 提交中击败了100.00%的用户
+内存消耗 :34.2 MB, 在所有 Java 提交中击败了86.32%的用户</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">swapPairs</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        ListNode begin = head;</span><br><span class="line">        ListNode end = head.next;</span><br><span class="line">        <span class="keyword">if</span>(end != <span class="keyword">null</span>)&#123;</span><br><span class="line">            begin.next = swapPairs(end.next);</span><br><span class="line">            end.next = begin;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> begin;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> end;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>141 . 环形链表</strong></p>
+<hr>
+<p>给定一个链表，判断链表中是否有环。</p>
+<p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。</p>
+<p>示例 1：</p>
+<pre><code>输入：head = [3,2,0,-4], pos = 1
+输出：true
+解释：链表中有一个环，其尾部连接到第二个节点。</code></pre><hr>
+<p>方法一:</p>
+<pre><code>执行用时 :0 ms, 在所有 Java 提交中击败了100.00%的用户
+内存消耗 :36.4 MB, 在所有 Java 提交中击败了97.28%的用户</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( head == <span class="keyword">null</span> ) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        ListNode kuai=head,man= head;</span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">            man = man.next;</span><br><span class="line">            kuai = kuai.next == <span class="keyword">null</span> ? <span class="keyword">null</span> : kuai.next.next;</span><br><span class="line">        &#125;<span class="keyword">while</span>(kuai != <span class="keyword">null</span> &amp;&amp;  kuai != man);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> kuai != <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法二: 哈希表</p>
+<p><strong>142 . 环形链表II</strong></p>
+<hr>
+<p>给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。</p>
+<p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。</p>
+<p>说明：不允许修改给定的链表。</p>
+<p>示例 1：</p>
+<pre><code>输入：head = [3,2,0,-4], pos = 1
+输出：tail connects to node index 1
+解释：链表中有一个环，其尾部连接到第二个节点。</code></pre><hr>
+<p>方法一:</p>
+<pre><code>执行用时 :1 ms, 在所有 Java 提交中击败了54.77%的用户
+内存消耗 :38.5 MB, 在所有 Java 提交中击败了5.03%的用户</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">detectCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//第一次相遇时,快的走的路时慢的两倍</span></span><br><span class="line">        <span class="comment">//第二次一个从头开始一个从上次相遇的地方开始都是每次移动一个,再相遇就是入口了.</span></span><br><span class="line">        ListNode node = meetIndex(head,head,<span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">if</span>( node == <span class="keyword">null</span> )&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>; </span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> meetIndex(node,head,<span class="keyword">false</span>).next == head ? head : meetIndex(node,head,<span class="keyword">false</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">meetIndex</span><span class="params">(ListNode man,ListNode kuai,<span class="keyword">boolean</span> bool)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(man == <span class="keyword">null</span> || kuai == <span class="keyword">null</span> ) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">            man = man.next;</span><br><span class="line">            <span class="keyword">if</span>(bool)&#123;</span><br><span class="line">                kuai = kuai.next == <span class="keyword">null</span> ? <span class="keyword">null</span> : kuai.next.next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                kuai = kuai.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">while</span>( man != kuai &amp;&amp; kuai != <span class="keyword">null</span>  );</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> kuai == <span class="keyword">null</span> ? <span class="keyword">null</span> : kuai;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法二: 哈希表</p>
+<p><strong>25 . K个一组反转链表</strong></p>
+<hr>
+<p>给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。</p>
+<p>k 是一个正整数，它的值小于或等于链表的长度。</p>
+<p>如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
+<p>示例 :</p>
+<pre><code>给定这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5
+
+当 k = 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5
+
+当 k = 3 时，应当返回: 3-&gt;2-&gt;1-&gt;4-&gt;5</code></pre><p>说明 :</p>
+<p>你的算法只能使用常数的额外空间。<br>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</p>
+<hr>
+<pre><code>执行用时 :1 ms, 在所有 Java 提交中击败了77.97%的用户
+内存消耗 :38.6 MB, 在所有 Java 提交中击败了76.24%的用户</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseKGroup</span><span class="params">(ListNode head, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span>) <span class="keyword">return</span> head;</span><br><span class="line">        ListNode node = head;</span><br><span class="line">        <span class="comment">//输出指针</span></span><br><span class="line">        ListNode out =<span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//上组反转里反转后最后节点指针</span></span><br><span class="line">        ListNode last=<span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = k;</span><br><span class="line">        k--;</span><br><span class="line">        <span class="keyword">while</span>(node != <span class="keyword">null</span> &amp;&amp; k &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            node = node.next;</span><br><span class="line">            k--;</span><br><span class="line">            <span class="comment">//这里一开始没有加 node ! null 结果是从第二组开始就报空指针,然后next赋值改为判null,之后run里面还是报空,所以这里加了个条件;</span></span><br><span class="line">            <span class="keyword">if</span>(k == <span class="number">0</span> &amp;&amp; node != <span class="keyword">null</span>)&#123;</span><br><span class="line">                ListNode next = node == <span class="keyword">null</span> ? <span class="keyword">null</span> : node.next;</span><br><span class="line">                run(node,head,last);</span><br><span class="line">                last = head;</span><br><span class="line">                head = next;</span><br><span class="line">                <span class="keyword">if</span>(out == <span class="keyword">null</span> ) out = node;</span><br><span class="line">                <span class="comment">//这里一开始直接是node = node.next,这是个bug,以为node.next已经指向了前面</span></span><br><span class="line">                node = next;</span><br><span class="line">                k = sum-<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> out == <span class="keyword">null</span> ? head : out;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">(ListNode node,ListNode head,ListNode last)</span></span>&#123;</span><br><span class="line">        ListNode pre = node.next;</span><br><span class="line">        ListNode cur = head;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//while(cur != null)&#123; 这样会形成环</span></span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="keyword">null</span> &amp;&amp; cur != head.next)&#123;</span><br><span class="line">            ListNode next = cur.next;</span><br><span class="line">            cur.next = pre;</span><br><span class="line">            pre = cur;</span><br><span class="line">            cur = next;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(last != <span class="keyword">null</span> ) last.next = pre;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -204,6 +269,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -388,19 +472,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -420,6 +500,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
@@ -428,15 +516,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
