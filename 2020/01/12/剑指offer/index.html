@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="jaan-个人博客">
 <meta property="og:description" content="剑指offer1. 二维数组中的查找   在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 运行时间 : 166 ms , 运行内存 : 17300K 1234567891011121314151617public class Solution &amp;#123">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-13T07:19:35.987Z">
+<meta property="og:updated_time" content="2020-01-14T03:08:45.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer">
 <meta name="twitter:description" content="剑指offer1. 二维数组中的查找   在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 运行时间 : 166 ms , 运行内存 : 17300K 1234567891011121314151617public class Solution &amp;#123">
@@ -249,6 +249,22 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> [] dp ;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">JumpFloorII</span><span class="params">(<span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(target &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        dp = <span class="keyword">new</span> <span class="keyword">int</span>[target+<span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= target ; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j &lt; i ;j++)&#123;</span><br><span class="line">                dp[i] += dp[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[target];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>方法二:递归</p>
+<p><strong>10 . 矩形覆盖</strong></p>
+<hr>
+<p>我们可以用2 * 1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2 * 1的小矩形无重叠地覆盖一个2 * n的大矩形，总共有多少种方法？</p>
+<pre><code>略,与跳台阶一样</code></pre><p><strong>11 . 二进制中1的个数</strong></p>
+<hr>
+<p>输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。</p>
+<p>运行时间： 17 ms 占用内存：9112K</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">NumberOf1</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>((n&amp;<span class="number">1</span>) == <span class="number">1</span>) sum++;</span><br><span class="line">            n = n &gt;&gt;&gt; <span class="number">1</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>12 . 数值的整数次方</strong></p>
+<hr>
+<p>给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。</p>
+<p>保证base和exponent不同时为0</p>
+<p>运行时间： 56 ms 占用内存：10308K</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">Power</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">int</span> exponent)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ( exponent == <span class="number">0</span> ) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">double</span> sum = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">boolean</span> mark = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(exponent &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            exponent = (-exponent);</span><br><span class="line">            mark = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(exponent &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            sum*=base;</span><br><span class="line">            exponent--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mark ? <span class="number">1.0</span>/sum : sum;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -538,11 +554,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
